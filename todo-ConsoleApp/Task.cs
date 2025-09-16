@@ -8,11 +8,11 @@ namespace todo_ConsoleApp
 {
     class Task
     {
-        public static int nextId = 1; // automatyczne id
+        public static int nextId = 1; 
         public int id {get; set;}
         public string title { get; set; }
         public string description { get; set; }
-        //private DateTime? DueDate;
+        
         public bool isCompleted = false;
 
         public Task(string title, string description)
@@ -20,25 +20,11 @@ namespace todo_ConsoleApp
             this.id = nextId++;
             this.title = title;
             this.description = description;
-            /*this.DueDate = dueDate;*/
         }
-
-        // Konstruktor pomocniczy - bez daty
-        /*public Task(string title, string description)
-            : this(title, description, null) // wywołuje główny konstruktor z dueDate = null
-        {
-            
-        }*/
-
 
         public void GetInfo()
         {
-            Console.WriteLine($"{id}. {title} ({description}) {(isCompleted ? "[✓]" : "[ ]")} ");
+            Console.WriteLine($"{id}. {title} ({description}) {(isCompleted ? "[X]" : "[ ]")} ");
         }
-
-        /*public string GetDueDateString()
-        {
-            return DueDate.HasValue ? DueDate.Value.ToString("yyyy-MM-dd") : "Brak daty";
-        }*/
     }
 }
